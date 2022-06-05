@@ -2,7 +2,8 @@ version: "3"
 
 # Define the Docker volume named esdata for the Elasticsearch container.
 volumes:
-  esdata: ./
+  esdata: 
+    - ./
 
 # Deploying three container services (fluentd, elasticsearch, and kibana)
 services:
