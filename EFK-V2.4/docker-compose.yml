@@ -14,11 +14,11 @@ services:
       - ./fluentd/conf:/fluentd/etc
       - ./logs:/logs
     ports:
-      - 8080:8080
+      - 24224:24224
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.4.2
     environment:
       ELASTICSEARCH_URL: http://elasticsearch:9200
     ports:
-      - "24224:24224"
+      - 5601:5601
