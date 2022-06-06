@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v1.1.0-debian-onbuild
+FROM fluent/fluentd:v1.4-debian-onbuild
 USER root
 
 RUN ulimit -n 65536
