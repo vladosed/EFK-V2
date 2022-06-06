@@ -1,6 +1,5 @@
-# Do not split this into multiple RUN!
-# Docker creates a layer for every RUN-Statement
-# therefore an 'apk delete build*' has no effect
+# fluentd/Dockerfile
+FROM fluent/fluentd:v0.12-debian
 RUN apk --no-cache --update add \
                             build-base \
                             ca-certificates \
@@ -40,3 +39,4 @@ COPY fluent.conf /fluentd/etc/
 RUN apk del build-base ruby-dev
 
 CMD ["/usr/bin/ruby", "/usr/bin/fluentd", "-c", "/fluentd/etc/fluent.conf"]
+#RUN ["gem", "install", "fluent-plugin-elasticsearch", "--no-rdoc", "--no-ri", "--version", "1.9.2"]
