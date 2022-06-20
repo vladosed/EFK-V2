@@ -1,4 +1,4 @@
-FROM fluent/fluentd
+FROM fluentd:v1.14.0-debian-1.0
 RUN apk add make
 RUN apk add curl
 RUN gem install fluent-plugin-elasticsearch --no-rdoc --no-ri
