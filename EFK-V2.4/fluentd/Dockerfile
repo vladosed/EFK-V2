@@ -3,5 +3,6 @@ USER root
 RUN gem uninstall -I elasticsearch && gem install elasticsearch -v 7.17.0
 RUN ["gem", "install", "fluent-plugin-elasticsearch", "--no-document", "--version", "5.0.3"]
 RUN ["gem", "install", "fluent-plugin-secure-forward"]
+RUN gem install elasticsearch-transport
 USER fluent
 
