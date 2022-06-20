@@ -12,15 +12,15 @@ services:
         fluentd-address: localhost:24224
         tag: httpd.access
 
-  fluentd:
-    build: ./fluentd
-    volumes:
-      - ./fluentd/conf:/fluentd/etc
-    links:
-      - "elasticsearch"
-    ports:
-      - "24224:24224"
-      - "24224:24224/udp"
+  # fluentd:
+  #   build: ./fluentd
+  #   volumes:
+  #     - ./fluentd/conf:/fluentd/etc
+  #   links:
+  #     - "elasticsearch"
+  #   ports:
+  #     - "24224:24224"
+  #     - "24224:24224/udp"
 
   elasticsearch:
     image: elasticsearch:7.17.4
