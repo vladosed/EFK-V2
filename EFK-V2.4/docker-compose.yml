@@ -7,6 +7,8 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+    volumes:
+     - ./ES1:./
 
   fluentd:
     build: ./fluentd
@@ -24,3 +26,4 @@ services:
       ELASTICSEARCH_URL: http://elasticsearch:9200
     ports:
       - 5601:5601
+
