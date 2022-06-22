@@ -3,7 +3,8 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
     environment:
-      discovery.type: single-node
+      - discovery.type: single-node
+      - node.name=EFK
     ports:
       - 9200:9200
       - 9300:9300
